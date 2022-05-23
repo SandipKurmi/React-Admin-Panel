@@ -11,31 +11,42 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { Link } from 'react-router-dom'
+
 
 const Sidebar = () => {
     return (
         <div className="Sidebar">
             <div className="top">
-                <span className="logo">xsquare Admin</span>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                    <span className="logo">xsquare Admin</span>
+                </Link>
             </div>
             <hr />
             <div className="center">
                 <ul>
                     <p className="title">MAIN</p>
-                    <li>
-                        <DashboardIcon className="icon" />
-                        <span>Dashboard</span>
-                    </li>
-                    <p className="title">LISTS</p>
+                    <Link to="/" style={{ textDecoration: "none" }}>
+                        <li>
+                            <DashboardIcon className="icon" />
+                            <span>Dashboard</span>
+                        </li>
+                    </Link>
 
-                    <li>
-                        <PersonOutlineIcon className="icon" />
-                        <span>Users</span>
-                    </li>
-                    <li>
-                        <CategoryIcon className="icon" />
-                        <span>Products</span>
-                    </li>
+                    <p className="title">LISTS</p>
+                    <Link to="/users" style={{ textDecoration: "none" }}>
+                        <li>
+
+                            <PersonOutlineIcon className="icon" />
+                            <span>Users</span>
+                        </li>
+                    </Link>
+                    <Link to="/products" style={{ textDecoration: "none" }}>
+                        <li>
+                            <CategoryIcon className="icon" />
+                            <span>Products</span>
+                        </li>
+                    </Link>
                     <li>
                         <LocalShippingOutlinedIcon className="icon" />
                         <span>Delivery</span>

@@ -13,15 +13,12 @@ const New = ({ inputs, title }) => {
             <div className="newContainer">
                 <Navbar />
                 <div className="top">
-                    <h1>Add new user</h1>
+                    <h1>{title}</h1>
                 </div>
 
                 <div className="bottom">
                     <div className="left">
-                        <img src={
-                            file ? URL.createObjectURL(file) : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
-                        }
-                            alt="" />
+                        <img src={file ? URL.createObjectURL(file) : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"} alt="" />
                     </div>
                     <div className="right">
                         <form >
@@ -29,7 +26,7 @@ const New = ({ inputs, title }) => {
                                 <label htmlFor="file">
                                     Image : <DriveFolderUploadOutlinedIcon className='icon' />
                                 </label>
-                                <input type="file" id="file"
+                                <input type="file" id="file" accept=".png, .jpg, .jpeg"
                                     onChange={(e) => setFile(e.target.files[0])}
                                     style={{ display: "none" }}
                                 />
